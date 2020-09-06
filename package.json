@@ -1,0 +1,24 @@
+{
+  "name": "biton-simulations",
+  "version": "0.0.1",
+  "description": "biton simulations module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biton/simulations.git"
+  },
+  "author": "Marios Isaakidis (marios@bitonproject.org)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/biton/simulations/issues"
+  },
+  "homepage": "https://github.com/biton/simulations#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "seedrandom": "^3.0.5"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "biton-topology",
+  "version": "0.0.1",
+  "description": "Construct a scale-free network with preferential attachment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitonproject/simulations.git"
+  },
+  "author": "Marios Isaakidis (marios@bitonproject.org)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/bitonproject/simulations/issues"
+  },
+  "homepage": "https://bitonproject.org",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "graphology": "^0.17.1"
+  }
+}
