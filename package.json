@@ -4,7 +4,8 @@
   "description": "biton simulations module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run serve",
+    "serve": "browserify . -s bitonSim -o public/bitonSim.js && serve public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,13 @@
   },
   "homepage": "https://github.com/biton/simulations#readme",
   "dependencies": {
+    "d3": "^6.1.1",
     "debug": "^4.1.1",
-    "seedrandom": "^3.0.5"
+    "seedrandom": "^3.0.5",
+    "webcola": "^3.4.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.2",
+    "serve": "^11.3.2"
   }
 }

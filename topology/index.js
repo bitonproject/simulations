@@ -87,9 +87,9 @@ class bitonTopology {
     }
 
     // Connect each node to k/2 rightmost neighbors (wrapping around the array)
-    // in effect forming a k-regular ring lattice
+    // in effect forming a ring lattice where each node is connected to k nearest neighbors
     for (let i = 0; i < n; i++) {
-      for (let j = 1; j < k/2 + 1; j++) {
+      for (let j = 1; j <= k/2; j++) {
         G.addEdge(keyPrefix + i, keyPrefix + ((i + j) % n), edgeAttrs)
       }
     }
@@ -103,7 +103,7 @@ class bitonTopology {
         do {
           newTarget = nodes[Math.floor(this.prng() * nodes.length)]
         } while (source === newTarget || G.hasEdge(source, newTarget))
-
+        // Rewire edge to new target
         G.dropEdge(edge)
         G.addEdge(source, newTarget, edgeAttrs)
       }

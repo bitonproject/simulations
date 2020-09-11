@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>biton simulations</title>
+    <style>
+        body {
+            font-family: system-ui, arial;
+        }
+
+        .graph {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<h1>biton Simulations</h1>
+<div class="graph"></div>
+
+<script>
+  // Show debug messages in browser console
+  localStorage.debug = 'biton*'
+</script>
+
+<script src="bitonSim.js"></script>
+
+<script>
+    const sim = new bitonSim('.graph')
+</script>
+
+</body>
+</html>
