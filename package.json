@@ -21,11 +21,11 @@
   "dependencies": {
     "d3": "^6.1.1",
     "debug": "^4.1.1",
-    "seedrandom": "^3.0.5",
-    "webcola": "^3.4.0"
+    "seedrandom": "^3.0.5"
   },
   "devDependencies": {
     "browserify": "^16.5.2",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "standard": "^14.3.4"
   }
 }

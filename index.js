@@ -5,23 +5,28 @@ const { EventEmitter}  = require('events')
 const seedrandom = require('seedrandom')
 
 const bitonTopology = require('./topology')
+const drawGraph = require('./drawGraph')
 
 class bitonSim extends EventEmitter {
   constructor () {
     super()
 
-    const topology = new bitonTopology(null, new seedrandom('topology seed'))
+    this.topology = new bitonTopology(null, new seedrandom('topology seed'))
 
     // Generate honest nodes topology
-    topology.resetPrng(new seedrandom('honest small world'))
-    const honestSW = topology.genSmallWorld(4000, 12, 0.25, 'honest')
+    this.topology.resetPrng(new seedrandom('honest small world'))
+    const honestSW = this.topology.genSmallWorld(500, 8, 0.25, 'honest')
 
     // Generate malicious nodes topology
-    topology.resetPrng(new seedrandom('malicious small world'))
-    const maliciousSW = topology.genSmallWorld(1000, 12, 0.25, 'malicious')
+    this.topology.resetPrng(new seedrandom('malicious small world'))
+    const maliciousSW = this.topology.genSmallWorld(100, 6, 0.25, 'malicious')
 
-    topology.mergeGraph(honestSW)
-    topology.mergeGraph(maliciousSW)
+    this.topology.mergeGraph(honestSW)
+    this.topology.mergeGraph(maliciousSW)
+  }
+
+  draw(root) {
+    return new drawGraph(root, this.topology.graph)
   }
 }
 

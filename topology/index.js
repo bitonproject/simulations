@@ -42,12 +42,14 @@ class bitonTopology {
    * @param {graphology} graph - The graph to be merged
    */
   mergeGraph(graph) {
-    graph.forEachNode((node, attributes) => {
-      this.graph.mergeNode(node, attributes)
+    const self = this
+
+    graph.forEachNode( function (node, attributes) {
+      self.graph.mergeNode(node, attributes)
     })
 
-    graph.forEachEdge((edge, attributes, source, target) => {
-      this.graph.mergeEdge(source, target, attributes)
+    graph.forEachEdge( function (edge, attributes, source, target) {
+      self.graph.mergeEdge(source, target, attributes)
     })
   }
 
